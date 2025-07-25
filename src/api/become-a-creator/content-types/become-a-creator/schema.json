@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "become_a_creator_pages",
+  "info": {
+    "singularName": "become-a-creator",
+    "pluralName": "become-a-creator-pages",
+    "displayName": "Become a Creator"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "blocks"
+    }
+  }
+}

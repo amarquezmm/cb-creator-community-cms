@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "academy_videos",
+  "info": {
+    "singularName": "academy-video",
+    "pluralName": "academy-videos",
+    "displayName": "Academy Video"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "videoUrl": {
+      "type": "string"
+    }
+  }
+}
