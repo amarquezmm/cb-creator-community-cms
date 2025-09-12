@@ -619,6 +619,10 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Date: Schema.Attribute.DateTime;
+    eventContent: Schema.Attribute.DynamicZone<
+      ['article-content.article-content']
+    >;
+    eventDescription: Schema.Attribute.Text;
     Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
