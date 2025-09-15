@@ -36,7 +36,8 @@
     "eventContent": {
       "type": "dynamiczone",
       "components": [
-        "article-content.article-content"
+        "shared.rich-text",
+        "shared.media"
       ]
     }
   }

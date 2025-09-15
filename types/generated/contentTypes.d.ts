@@ -620,7 +620,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     Date: Schema.Attribute.DateTime;
     eventContent: Schema.Attribute.DynamicZone<
-      ['article-content.article-content']
+      ['shared.rich-text', 'shared.media']
     >;
     eventDescription: Schema.Attribute.Text;
     Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;

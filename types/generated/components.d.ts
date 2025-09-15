@@ -1,19 +1,5 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface ArticleContentArticleContent extends Struct.ComponentSchema {
-  collectionName: 'components_article_content_article_contents';
-  info: {
-    displayName: 'Article Content';
-    icon: 'layer';
-  };
-  attributes: {
-    articleMedia: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    articleTextContent: Schema.Attribute.Blocks;
-  };
-}
-
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -79,7 +65,6 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'article-content.article-content': ArticleContentArticleContent;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
