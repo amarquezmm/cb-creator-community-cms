@@ -17,6 +17,9 @@
     "eventDescription": {
       "type": "text"
     },
+    "Organizer": {
+      "type": "string"
+    },
     "Date": {
       "type": "datetime"
     },
