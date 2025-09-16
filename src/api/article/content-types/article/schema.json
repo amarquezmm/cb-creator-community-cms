@@ -49,16 +49,8 @@
       "type": "dynamiczone",
       "components": [
         "shared.media",
-        "shared.quote",
-        "shared.rich-text",
-        "shared.slider"
+        "shared.rich-text"
       ]
-    },
-    "TestField": {
-      "type": "string"
-    },
-    "TestToggleButton": {
-      "type": "boolean"
     }
   }
 }
