@@ -36,6 +36,9 @@
     "Location": {
       "type": "string"
     },
+    "eventLink": {
+      "type": "string"
+    },
     "eventContent": {
       "type": "dynamiczone",
       "components": [
