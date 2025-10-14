@@ -626,7 +626,7 @@ export interface ApiCommunityHighlightCommunityHighlight
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Year: Schema.Attribute.BigInteger;
+    Year: Schema.Attribute.String;
   };
 }
 
