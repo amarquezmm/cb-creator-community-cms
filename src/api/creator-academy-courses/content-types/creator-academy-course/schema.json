@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "creator_academy_courses",
+  "info": {
+    "singularName": "creator-academy-course",
+    "pluralName": "creator-academy-courses",
+    "displayName": "Creator Academy"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "courseDuration": {
+      "type": "integer"
+    },
+    "courseNumber": {
+      "type": "integer"
+    },
+    "course_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course-categories.course-category"
+    },
+    "couseContent": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.rich-text",
+        "shared.media"
+      ]
+    }
+  }
+}

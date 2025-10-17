@@ -631,6 +631,75 @@ export interface ApiCommunityHighlightCommunityHighlight
   };
 }
 
+export interface ApiCourseCategoriesCourseCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'course_categories';
+  info: {
+    displayName: 'Course Categories';
+    pluralName: 'course-categories';
+    singularName: 'course-category';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    courseDescription: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-categories.course-category'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCreatorAcademyCoursesCreatorAcademyCourse
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'creator_academy_courses';
+  info: {
+    displayName: 'Creator Academy';
+    pluralName: 'creator-academy-courses';
+    singularName: 'creator-academy-course';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    course_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::course-categories.course-category'
+    >;
+    courseDuration: Schema.Attribute.Integer;
+    courseNumber: Schema.Attribute.Integer;
+    couseContent: Schema.Attribute.DynamicZone<
+      ['shared.rich-text', 'shared.media']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::creator-academy-courses.creator-academy-course'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    shortDescription: Schema.Attribute.Text;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
@@ -1214,6 +1283,8 @@ declare module '@strapi/strapi' {
       'api::become-a-creator.become-a-creator': ApiBecomeACreatorBecomeACreator;
       'api::category.category': ApiCategoryCategory;
       'api::community-highlight.community-highlight': ApiCommunityHighlightCommunityHighlight;
+      'api::course-categories.course-category': ApiCourseCategoriesCourseCategory;
+      'api::creator-academy-courses.creator-academy-course': ApiCreatorAcademyCoursesCreatorAcademyCourse;
       'api::event.event': ApiEventEvent;
       'api::global.global': ApiGlobalGlobal;
       'plugin::content-releases.release': PluginContentReleasesRelease;
