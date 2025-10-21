@@ -681,6 +681,7 @@ export interface ApiCreatorAcademyCoursesCreatorAcademyCourse
       ['shared.rich-text', 'shared.media']
     >;
     courseDuration: Schema.Attribute.Integer;
+    courseHero: Schema.Attribute.Media<'images'>;
     courseNumber: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
