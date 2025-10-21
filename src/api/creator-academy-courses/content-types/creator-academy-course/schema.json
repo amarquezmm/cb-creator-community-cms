@@ -28,7 +28,7 @@
       "relation": "oneToOne",
       "target": "api::course-categories.course-category"
     },
-    "couseContent": {
+    "courseContent": {
       "type": "dynamiczone",
       "components": [
         "shared.rich-text",

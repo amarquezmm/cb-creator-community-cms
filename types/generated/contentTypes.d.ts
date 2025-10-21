@@ -677,11 +677,11 @@ export interface ApiCreatorAcademyCoursesCreatorAcademyCourse
       'oneToOne',
       'api::course-categories.course-category'
     >;
-    courseDuration: Schema.Attribute.Integer;
-    courseNumber: Schema.Attribute.Integer;
-    couseContent: Schema.Attribute.DynamicZone<
+    courseContent: Schema.Attribute.DynamicZone<
       ['shared.rich-text', 'shared.media']
     >;
+    courseDuration: Schema.Attribute.Integer;
+    courseNumber: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
