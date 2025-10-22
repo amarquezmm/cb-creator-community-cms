@@ -45,7 +45,7 @@
       "target": "api::category.category",
       "inversedBy": "articles"
     },
-    "blocks": {
+    "articleContent": {
       "type": "dynamiczone",
       "components": [
         "shared.media",
