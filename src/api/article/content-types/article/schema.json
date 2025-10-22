@@ -23,14 +23,19 @@
       "type": "uid",
       "targetField": "title"
     },
-    "cover": {
+    "articleThumb": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "heroImage": {
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos"
+        "images"
       ]
     },
     "author": {
