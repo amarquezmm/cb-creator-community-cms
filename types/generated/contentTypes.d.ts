@@ -701,6 +701,35 @@ export interface ApiCreatorAcademyCoursesCreatorAcademyCourse
   };
 }
 
+export interface ApiEventCategoriesEventCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'event_categories';
+  info: {
+    displayName: 'Event Categories';
+    pluralName: 'event-categories';
+    singularName: 'event-category';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::event-categories.event-category'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
@@ -716,6 +745,10 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Date: Schema.Attribute.DateTime;
+    event_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::event-categories.event-category'
+    >;
     eventContent: Schema.Attribute.DynamicZone<
       ['shared.rich-text', 'shared.media']
     >;
@@ -761,6 +794,46 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPastEventsHighlightsPastEventHighlight
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'past_events_highlights';
+  info: {
+    displayName: 'Past Events Highlights';
+    pluralName: 'past-events-highlights';
+    singularName: 'past-event-highlight';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    endDate: Schema.Attribute.Date;
+    event_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::event-categories.event-category'
+    >;
+    eventThumb: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::past-events-highlights.past-event-highlight'
+    > &
+      Schema.Attribute.Private;
+    pastEventContent: Schema.Attribute.DynamicZone<
+      ['shared.rich-text', 'shared.media']
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    shortDescription: Schema.Attribute.Text;
+    startDate: Schema.Attribute.Date;
+    Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1286,8 +1359,10 @@ declare module '@strapi/strapi' {
       'api::community-highlight.community-highlight': ApiCommunityHighlightCommunityHighlight;
       'api::course-categories.course-category': ApiCourseCategoriesCourseCategory;
       'api::creator-academy-courses.creator-academy-course': ApiCreatorAcademyCoursesCreatorAcademyCourse;
+      'api::event-categories.event-category': ApiEventCategoriesEventCategory;
       'api::event.event': ApiEventEvent;
       'api::global.global': ApiGlobalGlobal;
+      'api::past-events-highlights.past-event-highlight': ApiPastEventsHighlightsPastEventHighlight;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
