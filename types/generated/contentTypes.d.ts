@@ -753,8 +753,9 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       ['shared.rich-text', 'shared.media']
     >;
     eventDescription: Schema.Attribute.Text;
+    eventHero: Schema.Attribute.Media<'images'>;
     eventLink: Schema.Attribute.String;
-    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    eventThumb: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'> &
       Schema.Attribute.Private;

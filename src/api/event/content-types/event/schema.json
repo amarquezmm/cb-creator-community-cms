@@ -20,21 +20,25 @@
     "Organizer": {
       "type": "string"
     },
+    "eventThumb": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "eventHero": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "startDate": {
       "type": "date"
     },
     "endDate": {
       "type": "date"
-    },
-    "Image": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
     },
     "Location": {
       "type": "string"
