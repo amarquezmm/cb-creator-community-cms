@@ -43,7 +43,10 @@
     "Location": {
       "type": "string"
     },
-    "eventLink": {
+    "eventWebsiteLink": {
+      "type": "string"
+    },
+    "eventRSVPLink": {
       "type": "string"
     },
     "eventContent": {
