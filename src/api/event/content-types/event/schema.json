@@ -20,8 +20,11 @@
     "Organizer": {
       "type": "string"
     },
-    "Date": {
-      "type": "datetime"
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
     },
     "Image": {
       "type": "media",

@@ -744,7 +744,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Date: Schema.Attribute.DateTime;
+    endDate: Schema.Attribute.Date;
     event_category: Schema.Attribute.Relation<
       'oneToOne',
       'api::event-categories.event-category'
@@ -761,6 +761,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     Location: Schema.Attribute.String;
     Organizer: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    startDate: Schema.Attribute.Date;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
