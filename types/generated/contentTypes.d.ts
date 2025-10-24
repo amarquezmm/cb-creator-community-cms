@@ -809,7 +809,7 @@ export interface ApiPastEventsHighlightsPastEventHighlight
     singularName: 'past-event-highlight';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;

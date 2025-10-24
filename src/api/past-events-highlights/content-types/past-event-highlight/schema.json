@@ -7,7 +7,7 @@
     "displayName": "Past Events Highlights"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
